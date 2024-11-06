@@ -143,15 +143,16 @@ function App() {
           </Box>
 
           <Chip
-            icon={<img src={Fire_icon} alt="Fire icon" style={{ width: '15px', height: '15px', marginLeft: '12px' }} />}
+            icon={<img src={Fire_icon} alt="Fire icon" style={{ width: '16px', height: '16px', marginLeft: '12px' }} />}
             label={
               <Typography sx={{ color: 'white', fontSize: '1rem' }}>
                 Use your Vault Asset <u>without</u> interrupting your streak.
               </Typography>
             }
             sx={{
-              mt: 3,
+              mt: 2,
               width: '100%',
+              height: 36,
               border: '1px solid #94FF0B',
               bgcolor: 'transparent', 
               color: '#94FF0B',
