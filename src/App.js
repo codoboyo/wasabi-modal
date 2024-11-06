@@ -18,18 +18,18 @@ const modalStyle = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 340,
+  width: 480,
   bgcolor: '#0A0F16',
   border: '1px solid #374155',
   boxShadow: 24,
-  p: 2,
-  borderRadius: 2,
+  p: 3,
+  borderRadius: 3,
 };
 
 const rowStyle = {
   bgcolor: '#0D1621',
-  px: 1,
-  py: 0.5,
+  px: 1.5,
+  py: 0.75,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -94,13 +94,13 @@ function App() {
 
   const AssetRow = ({ icon, name, amount, value }) => (
     <Box sx={rowStyle}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-        <img src={icon} alt={name} style={{width: '34px', height: '34px'}} />
-        <Typography sx={{ color: '#929DAE', fontSize: '1.4rem' }}>{name}</Typography>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2.25 }}>
+        <img src={icon} alt={name} style={{width: '51px', height: '51px'}} />
+        <Typography sx={{ color: '#929DAE', fontSize: '2.1rem' }}>{name}</Typography>
       </Box>
       <Box sx={{ textAlign: 'right' }}>
-        <Typography sx={{ color: 'white', fontSize: '0.875rem' }}>{amount}</Typography>
-        <Typography sx={{ color: '#87909f', fontSize: '0.875rem' }}>{value}</Typography>
+        <Typography sx={{ color: 'white', fontSize: '1.3rem' }}>{amount}</Typography>
+        <Typography sx={{ color: '#87909f', fontSize: '1.3rem' }}>{value}</Typography>
       </Box>
     </Box>
   );
@@ -124,17 +124,17 @@ function App() {
         slotProps={{ backdrop: { style: { backgroundColor: 'rgba(0, 0, 0, 0.2)' } } }}
       >
         <Box sx={modalStyle}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.5}}>
-            <Typography variant="subtitle2" component="h2" sx={{ color: 'white', fontWeight: 500 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2.25}}>
+            <Typography variant="subtitle2" component="h2" sx={{ color: 'white', fontWeight: 500, fontSize: '1.3rem' }}>
               Select from
             </Typography>
             <CloseIcon 
               onClick={handleClose}
-              sx={{ cursor: 'pointer', color: '#929DAE', fontSize: '1.1rem' }}
+              sx={{ cursor: 'pointer', color: '#929DAE', fontSize: '1.65rem' }}
             />
           </Box>
           
-          <Box sx={{ border: '1px solid #364052', borderRadius: 2, overflow: 'hidden' }}>
+          <Box sx={{ border: '1px solid #364052', borderRadius: 3, overflow: 'hidden' }}>
             <Stack divider={<Divider sx={{ bgcolor: '#364052' }} />}>
               {ASSETS.map(asset => (
                 <AssetRow key={asset.name} {...asset} />
@@ -143,20 +143,20 @@ function App() {
           </Box>
 
           <Chip
-            icon={<img src={Fire_icon} alt="Fire icon" style={{ width: '14px', height: '14px', marginLeft: '8px' }} />}
+            icon={<img src={Fire_icon} alt="Fire icon" style={{ width: '15px', height: '15px', marginLeft: '12px' }} />}
             label={
-              <Typography sx={{ color: 'white', fontSize: '0.7rem' }}>
+              <Typography sx={{ color: 'white', fontSize: '1rem' }}>
                 Use your Vault Asset <u>without</u> interrupting your streak.
               </Typography>
             }
             sx={{
-              mt: 2,
+              mt: 3,
               width: '100%',
               border: '1px solid #94FF0B',
               bgcolor: 'transparent', 
               color: '#94FF0B',
               '& .MuiChip-label': {
-                px: 1.5,
+                px: 2,
                 width: '100%'
               }
             }}
